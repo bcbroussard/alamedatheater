@@ -1,169 +1,351 @@
-
 <!-- saved from url=(0093)http://43500.formovietickets.com:2235/T.ASP?WCI=BT&Page=PickTickets&SHOWID=130066&PLACEID=364 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Reserved Seating</title>
-<script type="text/javascript" src="./5_reserved_type_files/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="./5_reserved_type_files/style.css">
-<link rel="stylesheet" type="text/css" href="./5_reserved_type_files/alertify.min.css">
-<link rel="stylesheet" type="text/css" href="./5_reserved_type_files/default.min.css">
-<link rel="stylesheet" href="./5_reserved_type_files/font-awesome.min.css">
-<script type="text/javascript" src="./5_reserved_type_files/T.asp"></script>
-<script type="text/javascript" src="./5_reserved_type_files/T(1).asp"></script>
-<script type="text/javascript" src="./5_reserved_type_files/alertify.min.js"></script>
-<script type="text/javascript">
-		$( document ).ready( init );
+<html>
 
-alertify.defaults = {
-        modal:true,
-        basic:false,
-        frameless:false,
-        movable:false,
-        resizable:false,
-        closable:false,
-        closableByDimmer:false,
-        maximizable:false,
-        startMaximized:false,
-        pinnable:false,
-        pinned:false,
+<head>
+  <!-- These tags must come first -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--END these tags must come first -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Reserved Seating</title>
+    <script type="text/javascript" src="./5_reserved_type_files/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./5_reserved_type_files/style.css">
+    <link rel="stylesheet" type="text/css" href="./5_reserved_type_files/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="./5_reserved_type_files/default.min.css">
+    <link rel="stylesheet" href="./5_reserved_type_files/font-awesome.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+    <!-- End Custom Styles -->
+
+    <script type="text/javascript" src="./5_reserved_type_files/T.asp"></script>
+    <script type="text/javascript" src="./5_reserved_type_files/T(1).asp"></script>
+    <script type="text/javascript" src="./5_reserved_type_files/alertify.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(init);
+
+    alertify.defaults = {
+        modal: true,
+        basic: false,
+        frameless: false,
+        movable: false,
+        resizable: false,
+        closable: false,
+        closableByDimmer: false,
+        maximizable: false,
+        startMaximized: false,
+        pinnable: false,
+        pinned: false,
         padding: true,
-        overflow:true,
-        maintainFocus:true,
-        transition:'zoom',
-        autoReset:true,
+        overflow: true,
+        maintainFocus: true,
+        transition: 'zoom',
+        autoReset: true,
 
-        notifier:{
-            delay:5,
-            position:'bottom-right'
+        notifier: {
+            delay: 5,
+            position: 'bottom-right'
         },
 
-        glossary:{
-            title:'Reserved Seating Warning',
+        glossary: {
+            title: 'Reserved Seating Warning',
             ok: 'OK',
-            cancel: 'Cancel'       
+            cancel: 'Cancel'
         },
 
-        theme:{
-            input:'ajs-input',
-            ok:'ajs-ok',
-            cancel:'ajs-cancel'
+        theme: {
+            input: 'ajs-input',
+            ok: 'ajs-ok',
+            cancel: 'ajs-cancel'
         }
     };
 
-		var config = {
-			backgroundImageId: 32,
-			legendImageId: -1,
-			gridWidth: 0,
-			gridHeight: 0,
-			yMultiplier: 0,
-			xMultiplier: 0,
-			usingCoords: false,
-			maxX: 0,
-			maxY: 0,
-			cellWidth: 0,
-			cellHeight: 0
-		}
+    var config = {
+        backgroundImageId: 32,
+        legendImageId: -1,
+        gridWidth: 0,
+        gridHeight: 0,
+        yMultiplier: 0,
+        xMultiplier: 0,
+        usingCoords: false,
+        maxX: 0,
+        maxY: 0,
+        cellWidth: 0,
+        cellHeight: 0
+    }
 
-		var rtsParameters = {
-			displayType: "ASSETSWITHOVERLAY",
-			disableSingleSeatWarnings: 0,
-			wheelchairWarn: 1,
-			companionWarn: 1,
-			perfId: 130066,
-			placeId: 364,
-			sectionId: 23,
-			showTime: "20170427163000",
-			title: "%42%45%41%55%54%59%20%41%4E%44%20%54%48%45%20%42%45%41%53%54%20%32%30%31%37",
-			audText: "8",
-			nonce: "155870cc-817d-4790-af79-27e8d01a26a6"
-		}
+    var rtsParameters = {
+        displayType: "ASSETSWITHOVERLAY",
+        disableSingleSeatWarnings: 0,
+        wheelchairWarn: 1,
+        companionWarn: 1,
+        perfId: 130066,
+        placeId: 364,
+        sectionId: 23,
+        showTime: "20170427163000",
+        title: "%42%45%41%55%54%59%20%41%4E%44%20%54%48%45%20%42%45%41%53%54%20%32%30%31%37",
+        audText: "8",
+        nonce: "155870cc-817d-4790-af79-27e8d01a26a6"
+    }
 
-		var state = {
-			seatsSelected: []
-		}
+    var state = {
+        seatsSelected: []
+    }
 
-		var tickets = [];
-		tickets[0] = new Ticket(1,"Adult",1125.00,0);
-		tickets[1] = new Ticket(2,"Under 12",800,0);
-		tickets[2] = new Ticket(3,"Military/Senior",800,0);
+    var tickets = [];
+    tickets[0] = new Ticket(1, "Adult", 1125.00, 0);
+    tickets[1] = new Ticket(2, "Under 12", 800, 0);
+    tickets[2] = new Ticket(3, "Military/Senior", 800, 0);
 
-		var ticketGroups = [];
-		var seatTicketGroups = [];
+    var ticketGroups = [];
+    var seatTicketGroups = [];
 
-    ticketGroups[0] = new TicketGroup(0, [1,2,3]);
-    seatTicketGroups[0] = new SeatTicketGroup(0, [951,952,953,955,957,959,961,963,965,967,969,971,954,956,958,960,962,964,966,968,970]);
+    ticketGroups[0] = new TicketGroup(0, [1, 2, 3]);
+    seatTicketGroups[0] = new SeatTicketGroup(0, [951, 952, 953, 955, 957, 959, 961, 963, 965, 967, 969, 971, 954, 956, 958, 960, 962, 964, 966, 968, 970]);
 
-		var soldSeats = [];
-soldSeats[12] = 954;
-soldSeats[13] = 956;
-soldSeats[14] = 958;
-soldSeats[15] = 960;
-soldSeats[16] = 962;
-soldSeats[17] = 964;
-soldSeats[18] = 966;
-soldSeats[19] = 968;
-soldSeats[20] = 970;
-</script>
+    var soldSeats = [];
+    soldSeats[12] = 954;
+    soldSeats[13] = 956;
+    soldSeats[14] = 958;
+    soldSeats[15] = 960;
+    soldSeats[16] = 962;
+    soldSeats[17] = 964;
+    soldSeats[18] = 966;
+    soldSeats[19] = 968;
+    soldSeats[20] = 970;
+    </script>
 </head>
+
 <body>
-<table id="Table1">
-<tbody><tr>
-<td>
-<table id="Table2">
-<tbody><tr>
-<td><p><span class="theatre">
+    <table id="Table1">
+        <tbody>
+            <tr>
+                <td>
+                    <table id="Table2">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p><span class="theatre">
 <!-- BEGIN PASTE HERE -->
 <font size="5" face="arial" style="font-family: sans-serif;">
-	<b>ALAMEDA THEATRE &amp; CINEPLEX</b><br>
+  <b>ALAMEDA THEATRE &amp; CINEPLEX</b><br>
 </font>
 <font face="arial" style="font-family: sans-serif;">
-	2317 Central Ave<br>
-	Alameda, CA 94501<br>
+  2317 Central Ave<br>
+  Alameda, CA 94501<br>
     <br>
 </font>
-</span></p><p>
-	<font size="5" face="arial" style="font-family: sans-serif;">
-	All online ticket purchases <u>must</u> be redeemed at the box office, a kiosk, or the Red Carpet Express.<br><br>
-	Select your desired seat locations. Some seats may have already been sold or held.<br><br>
-	Handicapped seating is available upon request at the box office or Red Carpet Express.<br><br>
-	You will be prompted to choose the type and amount of tickets desired.
-	</font>
-</p>
-<!-- END PASTE HERE -->
-<p></p></td>
-<td>
-<div id="wrapper" style="display: block;">
-<div id="seatMap">
-<div id="background" style="display: none;">
-<div id="showSummary">
-<fieldset>
-<legend>Seat selection(s) for:</legend>
-<label>Title: </label><span>BEAUTY AND THE BEAST 2017</span><br>
-<label>When: </label><span>4/27/2017 (Thursday afternoon at 4:30p)</span><br>
-</fieldset>
-</div>
-<div id="screenLegend">
-<img id="screenLegendImage" src="http://43500.formovietickets.com:2235/T.ASP?WCI=BT&amp;Page=PickTickets&amp;SHOWID=130066&amp;PLACEID=364">
-</div>
-<div id="screenIndicator">
-<p class="screenBlock">Screen</p>
-</div>
-<div id="seatingChart" style="width: 1012px; height: 532.5px; background-image: url(&quot;T.asp?WCI=BT&amp;h=728b1d71294088ef44b6a22af1280c34&amp;Page=ASSETIMAGE&amp;ImageID=32&quot;); background-repeat: no-repeat; background-size: 100% 100%;">
-<div id="seat_951" class="availableSeat seat" style="position: absolute; left: 115.013px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_951_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">1</div></div></div><div id="seat_952" class="availableSeat seat" style="position: absolute; left: 174.787px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_952_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">2</div></div></div><div id="seat_953" class="availableSeat seat" style="position: absolute; left: 234.562px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_953_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">3</div></div></div><div id="seat_955" class="availableSeat seat" style="position: absolute; left: 294.336px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_955_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">4</div></div></div><div id="seat_957" class="availableSeat seat" style="position: absolute; left: 354.11px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_957_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">5</div></div></div><div id="seat_959" class="availableSeat seat" style="position: absolute; left: 413.885px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_959_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">6</div></div></div><div id="seat_961" class="availableSeat seat" style="position: absolute; left: 473.659px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_961_overlay" class="OverlaySelected"><div class="seatLabel">7</div></div></div><div id="seat_963" class="availableSeat seat" style="position: absolute; left: 533.434px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_963_overlay" class="OverlaySelected"><div class="seatLabel">8</div></div></div><div id="seat_965" class="availableSeat seat" style="position: absolute; left: 593.208px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_965_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">9</div></div></div><div id="seat_967" class="availableSeat seat" style="position: absolute; left: 652.982px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_967_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">10</div></div></div><div id="seat_969" class="availableSeat seat" style="position: absolute; left: 712.757px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_969_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">11</div></div></div><div id="seat_971" class="availableSeat seat" style="position: absolute; left: 772.531px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal"><div id="seat_971_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);"><div class="seatLabel">12</div></div></div><div id="seat_954" class="unavailableSeat seat" style="position: absolute; left: 115.013px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion"><div id="seat_954_overlay" class="OverlaySold"><div class="seatLabel">C1</div></div></div><div id="seat_956" class="unavailableSeat seat" style="position: absolute; left: 174.686px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion"><div id="seat_956_overlay" class="OverlaySold"><div class="seatLabel">C2</div></div></div><div id="seat_958" class="unavailableSeat seat" style="position: absolute; left: 234.36px; top: 259.652px; width: 118.843px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=eac132bf7b61255910683ec2085f48d7&amp;Page=ASSETIMAGE&amp;ImageID=3&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Wheelchair"><div id="seat_958_overlay" class="OverlaySold"><div class="seatLabel">W1</div></div></div><div id="seat_960" class="unavailableSeat seat" style="position: absolute; left: 353.304px; top: 259.652px; width: 118.843px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=eac132bf7b61255910683ec2085f48d7&amp;Page=ASSETIMAGE&amp;ImageID=3&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Wheelchair"><div id="seat_960_overlay" class="OverlaySold"><div class="seatLabel">W2</div></div></div><div id="seat_962" class="unavailableSeat seat" style="position: absolute; left: 473.458px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion"><div id="seat_962_overlay" class="OverlaySold"><div class="seatLabel">C3</div></div></div><div id="seat_964" class="unavailableSeat seat" style="position: absolute; left: 533.131px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion"><div id="seat_964_overlay" class="OverlaySold"><div class="seatLabel">C4</div></div></div><div id="seat_966" class="unavailableSeat seat" style="position: absolute; left: 594.014px; top: 259.652px; width: 118.238px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=eac132bf7b61255910683ec2085f48d7&amp;Page=ASSETIMAGE&amp;ImageID=3&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Wheelchair"><div id="seat_966_overlay" class="OverlaySold"><div class="seatLabel">W3</div></div></div><div id="seat_968" class="unavailableSeat seat" style="position: absolute; left: 712.354px; top: 259.652px; width: 118.238px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=eac132bf7b61255910683ec2085f48d7&amp;Page=ASSETIMAGE&amp;ImageID=3&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Wheelchair"><div id="seat_968_overlay" class="OverlaySold"><div class="seatLabel">W4</div></div></div><div id="seat_970" class="unavailableSeat seat" style="position: absolute; left: 833.112px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion"><div id="seat_970_overlay" class="OverlaySold"><div class="seatLabel">C5</div></div></div></div>
-</div>
-<div id="seatNavWrapper" style="display: none;">
-<div id="seatNavigation">
-<button id="seatBackButton" class="backButton" type="button">Back</button>
-<button id="seatNextButton" class="nextButton" type="button">Continue (2 seats picked)</button>
-</div>
-</div>
-</div>
-<div id="ticketPickWrapper"><p class="instructions">For each seat selection assign the ticket type you wish to purchase:</p><div id="ticketPicker"><form action="https://43500.formovietickets.com:2235/T.asp?WCI=CS" method="POST"><input name="perfId" type="hidden" value="130066"><input name="sectionId" type="hidden" value="23"><input name="placeId" type="hidden" value="364"><input name="spCount" type="hidden" value="2"><input name="showTime" type="hidden" value="20170427163000"><input name="title" type="hidden" value="%42%45%41%55%54%59%20%41%4E%44%20%54%48%45%20%42%45%41%53%54%20%32%30%31%37"><input name="audText" type="hidden" value="8"><input name="nonce" type="hidden" value="155870cc-817d-4790-af79-27e8d01a26a6"><table><tbody><tr><th>Seat</th><th>Ticket</th></tr><tr><td>A,7</td><td><select name="SP1"><option value="1|2|7">Adult ($11.25)</option><option value="2|2|7">Under 12 ($8.00)</option><option value="3|2|7">Military/Senior ($8.00)</option></select></td></tr><tr><td>A,8</td><td><select name="SP2"><option value="1|2|8">Adult ($11.25)</option><option value="2|2|8">Under 12 ($8.00)</option><option value="3|2|8">Military/Senior ($8.00)</option></select></td></tr></tbody></table></form></div></div><div id="ticketNavWrapper"><div id="ticketNavigation"><input id="ticketBackButton" class="backButton" type="button" value="Back" onclick="ticketBackButtonClick();"><input type="button" id="ticketNextButton" class="nextButton" value="Continue" onclick="this.disabled = true; document.forms[0].submit();"></div></div></div>
-</td>
-</tr>
-</tbody></table>
-</td>
-</tr>
-</tbody></table>
+</span></p>
+                                    <p>
+                                        <font size="5" face="arial" style="font-family: sans-serif;">
+                                            All online ticket purchases <u>must</u> be redeemed at the box office, a kiosk, or the Red Carpet Express.
+                                            <br>
+                                            <br> Select your desired seat locations. Some seats may have already been sold or held.
+                                            <br>
+                                            <br> Handicapped seating is available upon request at the box office or Red Carpet Express.
+                                            <br>
+                                            <br> You will be prompted to choose the type and amount of tickets desired.
+                                        </font>
+                                    </p>
+                                    <!-- END PASTE HERE -->
+                                    <p></p>
+                                </td>
+                                <td>
+                                    <div id="wrapper" style="display: block;">
+                                        <div id="seatMap">
+                                            <div id="background" style="display: none;">
+                                                <div id="showSummary">
+                                                    <fieldset>
+                                                        <legend>Seat selection(s) for:</legend>
+                                                        <label>Title: </label><span>BEAUTY AND THE BEAST 2017</span>
+                                                        <br>
+                                                        <label>When: </label><span>4/27/2017 (Thursday afternoon at 4:30p)</span>
+                                                        <br>
+                                                    </fieldset>
+                                                </div>
+                                                <div id="screenLegend">
+                                                    <img id="screenLegendImage" src="http://43500.formovietickets.com:2235/T.ASP?WCI=BT&amp;Page=PickTickets&amp;SHOWID=130066&amp;PLACEID=364">
+                                                </div>
+                                                <div id="screenIndicator">
+                                                    <p class="screenBlock">Screen</p>
+                                                </div>
+                                                <div id="seatingChart" style="width: 1012px; height: 532.5px; background-image: url(&quot;T.asp?WCI=BT&amp;h=728b1d71294088ef44b6a22af1280c34&amp;Page=ASSETIMAGE&amp;ImageID=32&quot;); background-repeat: no-repeat; background-size: 100% 100%;">
+                                                    <div id="seat_951" class="availableSeat seat" style="position: absolute; left: 115.013px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_951_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_952" class="availableSeat seat" style="position: absolute; left: 174.787px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_952_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_953" class="availableSeat seat" style="position: absolute; left: 234.562px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_953_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">3</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_955" class="availableSeat seat" style="position: absolute; left: 294.336px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_955_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">4</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_957" class="availableSeat seat" style="position: absolute; left: 354.11px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_957_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">5</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_959" class="availableSeat seat" style="position: absolute; left: 413.885px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_959_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">6</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_961" class="availableSeat seat" style="position: absolute; left: 473.659px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_961_overlay" class="OverlaySelected">
+                                                            <div class="seatLabel">7</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_963" class="availableSeat seat" style="position: absolute; left: 533.434px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_963_overlay" class="OverlaySelected">
+                                                            <div class="seatLabel">8</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_965" class="availableSeat seat" style="position: absolute; left: 593.208px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_965_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">9</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_967" class="availableSeat seat" style="position: absolute; left: 652.982px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_967_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">10</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_969" class="availableSeat seat" style="position: absolute; left: 712.757px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_969_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">11</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_971" class="availableSeat seat" style="position: absolute; left: 772.531px; top: 308.063px; width: 59.6736px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=deab01b9efe202fda12fddd4a81a14c8&amp;Page=ASSETIMAGE&amp;ImageID=2&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Normal">
+                                                        <div id="seat_971_overlay" class="OverlayNone" style="background-color: rgba(0,0,128,0.5);">
+                                                            <div class="seatLabel">12</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_954" class="unavailableSeat seat" style="position: absolute; left: 115.013px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion">
+                                                        <div id="seat_954_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">C1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_956" class="unavailableSeat seat" style="position: absolute; left: 174.686px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion">
+                                                        <div id="seat_956_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">C2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_958" class="unavailableSeat seat" style="position: absolute; left: 234.36px; top: 259.652px; width: 118.843px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=eac132bf7b61255910683ec2085f48d7&amp;Page=ASSETIMAGE&amp;ImageID=3&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Wheelchair">
+                                                        <div id="seat_958_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">W1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_960" class="unavailableSeat seat" style="position: absolute; left: 353.304px; top: 259.652px; width: 118.843px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=eac132bf7b61255910683ec2085f48d7&amp;Page=ASSETIMAGE&amp;ImageID=3&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Wheelchair">
+                                                        <div id="seat_960_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">W2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_962" class="unavailableSeat seat" style="position: absolute; left: 473.458px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion">
+                                                        <div id="seat_962_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">C3</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_964" class="unavailableSeat seat" style="position: absolute; left: 533.131px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion">
+                                                        <div id="seat_964_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">C4</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_966" class="unavailableSeat seat" style="position: absolute; left: 594.014px; top: 259.652px; width: 118.238px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=eac132bf7b61255910683ec2085f48d7&amp;Page=ASSETIMAGE&amp;ImageID=3&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Wheelchair">
+                                                        <div id="seat_966_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">W3</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_968" class="unavailableSeat seat" style="position: absolute; left: 712.354px; top: 259.652px; width: 118.238px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=eac132bf7b61255910683ec2085f48d7&amp;Page=ASSETIMAGE&amp;ImageID=3&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Wheelchair">
+                                                        <div id="seat_968_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">W4</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="seat_970" class="unavailableSeat seat" style="position: absolute; left: 833.112px; top: 259.652px; width: 59.5728px; height: 48.4106px; background-image: url(&quot;T.asp?WCI=BT&amp;h=adb8fc8400c95db1812a09d8fe4822fe&amp;Page=ASSETIMAGE&amp;ImageID=4&quot;); background-repeat: no-repeat; background-size: 100% 100%;" title="Companion">
+                                                        <div id="seat_970_overlay" class="OverlaySold">
+                                                            <div class="seatLabel">C5</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="seatNavWrapper" style="display: none;">
+                                                <div id="seatNavigation">
+                                                    <button id="seatBackButton" class="backButton" type="button">Back</button>
+                                                    <button id="seatNextButton" class="nextButton" type="button">Continue (2 seats picked)</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="ticketPickWrapper">
+                                            <p class="instructions">For each seat selection assign the ticket type you wish to purchase:</p>
+                                            <div id="ticketPicker">
+                                                <form action="https://43500.formovietickets.com:2235/T.asp?WCI=CS" method="POST">
+                                                    <input name="perfId" type="hidden" value="130066">
+                                                    <input name="sectionId" type="hidden" value="23">
+                                                    <input name="placeId" type="hidden" value="364">
+                                                    <input name="spCount" type="hidden" value="2">
+                                                    <input name="showTime" type="hidden" value="20170427163000">
+                                                    <input name="title" type="hidden" value="%42%45%41%55%54%59%20%41%4E%44%20%54%48%45%20%42%45%41%53%54%20%32%30%31%37">
+                                                    <input name="audText" type="hidden" value="8">
+                                                    <input name="nonce" type="hidden" value="155870cc-817d-4790-af79-27e8d01a26a6">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>Seat</th>
+                                                                <th>Ticket</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>A,7</td>
+                                                                <td>
+                                                                    <select name="SP1">
+                                                                        <option value="1|2|7">Adult ($11.25)</option>
+                                                                        <option value="2|2|7">Under 12 ($8.00)</option>
+                                                                        <option value="3|2|7">Military/Senior ($8.00)</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>A,8</td>
+                                                                <td>
+                                                                    <select name="SP2">
+                                                                        <option value="1|2|8">Adult ($11.25)</option>
+                                                                        <option value="2|2|8">Under 12 ($8.00)</option>
+                                                                        <option value="3|2|8">Military/Senior ($8.00)</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div id="ticketNavWrapper">
+                                            <div id="ticketNavigation">
+                                                <input id="ticketBackButton" class="backButton" type="button" value="Back" onclick="ticketBackButtonClick();">
+                                                <input type="button" id="ticketNextButton" class="nextButton" value="Continue" onclick="this.disabled = true; document.forms[0].submit();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
 
-
-</body></html>
+</html>

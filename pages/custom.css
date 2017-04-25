@@ -1,0 +1,1095 @@
+/*
+html {
+ box-sizing: border-box;
+}
+
+body {
+ font-family:sans-serif;
+}
+
+*, *:before, *:after {
+ box-sizing: inherit;
+}
+
+.theatre {
+ width: 75%;
+}
+
+#wrapper {
+ float: left;
+ padding: 0;
+ overflow: none;
+ margin: 0 auto
+}
+
+#background {
+ position: relative;
+ margin: auto auto;
+ overflow: none;
+}
+
+#seatingChart {
+ position: relative;
+ overflow: auto;
+ border: 2px solid black;
+ margin: 0 auto;
+}
+
+#screenIndicator {
+ position: relative;
+ overflow: auto;
+ border: 2px solid black;
+ margin: 0 auto;
+ background-color: black;
+ color: white;
+ text-align: center;
+}
+
+.seatingRow {
+ clear: both;
+}
+
+.seatDesc {
+}
+
+.seat {
+ height: 100%;
+ width: 100%;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+ -webkit-touch-callout: none;
+ -webkit-user-select: none;
+ background: white;
+}
+
+.OverlayTransparent {
+ position: relative;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: transparent;
+ display: table;
+}
+
+.OverlayNone {
+ position: relative;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0,0,0,0);
+ display: table;
+}
+
+.OverlaySold {
+ position: relative;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(255,0,0,0.5);
+ display: table;
+}
+
+.OverlaySelected {
+ position: relative;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(255,255,0,0.5);
+ display: table;
+}
+
+.OverlayViolation {
+ position: relative;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(51,204,255,0.5);
+ display: table;
+}
+
+.seatLabel {
+ font-weight: bold;
+ text-align: center;
+ display: table-cell;
+ vertical-align: middle;
+}
+
+#ticketPickWrapper {
+ width: 90%;
+ margin: 10px auto;
+}
+
+#ticketPicker {
+ margin: 20px auto;
+}
+
+#ticketPicker table {
+ border-collapse: collapse;
+ border: 1px solid black;
+ margin: 0 auto;
+}
+
+#ticketPicker table th,td {
+ padding: 10px;
+ font-weight: bold;
+}
+
+#seatNavWrapper, #ticketNavWrapper {
+ margin: 0 auto;
+ overflow: none;
+}
+
+#seatNavigation, #ticketNavigation {
+ margin: 10px auto;
+ display: table;
+}
+
+.backButton {
+ padding: 5px;
+ font-weight: bold;
+ margin-right: 10px;
+}
+
+.nextButton {
+ padding: 5px;
+ font-weight: bold;
+}
+
+.instructions {
+ text-align: center;
+ font-weight: bold;
+ width: 100%;
+ margin: 0 auto;
+ padding: 20px;
+}
+
+#Table1 {
+width: 100%;
+}
+
+#Table1 td {
+width: 50%;
+vertical-align: top;
+}
+
+#Table2 {
+width: 100%;
+}
+
+#Table2 td {
+width: 50%;
+vertical-align: top;
+}
+
+#Table3 {
+width: 100%;
+text-align: left;
+}
+
+#navHeader {
+background: grey;
+}
+
+#navHeader ul {
+ padding: 0;
+ margin: 0;
+ display: block;
+ list-style-type: none;
+}
+
+#navHeader ul li{
+ display: inline-block;
+ background: orange;
+ color: white;
+ padding: 5px;
+ border: solid 1px white;
+ margin: 5px;
+ border-radius: 5px;
+}
+
+#navHeader ul li i{
+ padding-right: 5px;
+}
+
+#navHeader ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+#cartIcon {
+ float: right;
+}
+
+.instructions {
+ text-align: center;
+ font-weight: bold;
+ width: 100%;
+ margin: 0 auto;
+ padding: 20px;
+}
+
+div.navigation {
+ clear: both;
+ margin: 0 auto 0 auto;
+ width: 100%;
+ overflow: auto;
+}
+
+p.previous {
+ float: left;
+}
+
+p.next {
+ float: right;
+}
+
+p.instructions {
+ color: #FF0000;
+}
+
+p.error {
+ color: #FF0000;
+ text-align: center;
+ width: 90%;
+}
+
+p.status {
+ color: #008000;
+ text-align: center;
+ width: 90%;
+}
+
+.tos {
+ color: #FFFFFF;
+ text-align: center;
+}
+
+.ticket_info_table {
+ border: solid 1px black;
+ margin: 10px;
+ border-collapse: collapse;
+}
+
+.ticket_info_table th {
+ border: solid 1px black;
+ background: lightgrey;
+}
+
+.ticket_info_table td {
+ border: solid 1px black;
+ background: white;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+div.optDropdown {
+background: lightyellow;
+color: black;
+padding: 5px;
+border: solid 1px black;
+-moz-border-radius: 5px;
+border-radius: 5px;
+margin: 5px 0 5px 0;
+}
+
+#purchaseinfo {
+width: 100%;
+table-layout: fixed;
+}
+
+#purchaseinfo th {
+font-weight: bold;
+padding: 10px 5px;
+}
+
+#purchaseinfo td {
+font-weight: normal;
+padding: 5px;
+}
+
+.ticket_total {
+width: 100%;
+padding: 5px 0;
+}
+
+.ticket_total_label {
+float: left;
+text-align: right;
+width: 90%;
+}
+
+.ticket_total_value {
+float: right;
+text-align: right;
+width: 10%;
+}
+
+.tickettax_total {
+width: 100%;
+padding: 5px 0;
+}
+
+.tickettax_total_label {
+float: left;
+text-align: right;
+width: 90%;
+}
+
+.tickettax_total_value {
+float: right;
+text-align: right;
+width: 10%;
+}
+
+.transaction_fee {
+width: 100%;
+padding: 5px 0;
+}
+
+.transaction_fee_label {
+float: left;
+text-align: right;
+width: 90%;
+}
+
+.transaction_fee_value {
+float: right;
+text-align: right;
+width: 10%;
+}
+
+.grand_total {
+width: 100%;
+padding: 5px 0;
+}
+
+.grand_total_label {
+float: left;
+text-align: right;
+width: 90%;
+}
+
+.grand_total_value {
+float: right;
+text-align: right;
+width: 10%;
+}
+
+#printTicketContent {
+  width: 800px;
+  margin: 0 auto 0 auto;
+}
+
+.contentSection {
+  border: solid 1px black;
+  padding-bottom: 15px;
+  width: 100%;
+  background: white;
+}
+
+.contentHeader {
+  background: black;
+  color: white;
+  font-size: 125%;
+  padding: 5px;
+}
+
+.transInfo {
+  display: inline-block;
+  padding: 10px;
+  width: 65%;
+}
+
+.transInfoLabel, .ticketInfoLabel {
+  display: inline-block;
+  text-align: right;
+  font-weight: normal;
+  width: 130px;
+  margin-right: 10px;
+}
+
+.transInfoData, .ticketInfoData {
+  display: inline-block;
+  text-align: left;
+  width: 50%;
+  font-weight: bold;
+}
+
+.transBarcode {
+  display: inline-block;
+  padding: 10px;
+}
+
+#qrCode {
+  display: table-cell;
+}
+
+#upcCode {
+  display: table-cell;
+}
+
+.printTicket {
+  position: relative;
+  display: inline-block;
+  border: solid 1px black;
+  margin-top: 10px;
+  height: 200px;
+  width: 100%;
+  background: white;
+}
+
+.printTicketHeaderLeft {
+  float: left;
+  background: black;
+  color: white;
+  -moz-transform:rotate(270deg);
+  -webkit-transform:rotate(270deg);
+  -o-transform:rotate(270deg);
+  -ms-transform:rotate(270deg);
+  transform:rotate(270deg);
+  transform-origin: top left;
+  width: 199px;
+  text-align: center;
+  margin-top: 199px;
+  padding: 5px;
+  font-size: 125%;
+}
+
+.printTicketHeaderRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: black;
+  color: white;
+  -moz-transform:rotate(270deg);
+  -webkit-transform:rotate(270deg);
+  -o-transform:rotate(270deg);
+  -ms-transform:rotate(270deg);
+  transform:rotate(270deg);
+  transform-origin: top right;
+  width: 199px;
+  text-align: center;
+  padding: 5px;
+  font-size: 125%;
+  margin-right: 30px;
+}
+
+.showInfo {
+  float: left;
+  border-right: dashed 1px black;
+  text-align: center;
+  height: 199px;
+  padding: 0 5px 0 5px;
+  margin-left: -130px;
+  width: 50%;
+}
+
+.showInfo span {
+   display: inline-block;
+   height: 20%;
+}
+
+.showInfoTheatre {
+  font-weight: bold;
+}
+
+.showInfoTitle {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.showInfoTime {
+  font-weight: bold;
+  font-size: 125%;
+}
+
+.showInfoTicket {
+  font-weight: bold;
+}
+
+.pickupInfo {
+  float: left;
+  -moz-transform:rotate(270deg);
+  -webkit-transform:rotate(270deg);
+  -o-transform:rotate(270deg);
+  -ms-transform:rotate(270deg);
+  transform:rotate(270deg);
+  transform-origin: 0 0;
+  text-align: center;
+  margin: 199px 0 0 0;
+  width: 199px;
+  font-weight: bold;
+}
+
+.pickupBarcode {
+  float: left;
+  margin-left: -105px;
+  width: 25%;
+}
+
+.pickupBarcode img {
+  display: block;
+  margin: 10px auto;
+  height: 40%;
+  max-width: 100%;
+}
+*/
+
+body table {
+
+}
+
+body table tbody tr  td {
+    display: block;
+    clear:both;
+}
+
+a {
+  display: inline-block;
+}
+
+button[disabled],
+{
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .65;
+}
+
+
+/*Back*/
+.backButton,
+input[type="button"] {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.backButton:focus,
+.backButton:active:focus,
+.backButton.active:focus,
+.backButton.focus,
+.backButton:active.focus,
+.backButton.active.focus,
+input[type="button"]:focus,
+input[type="button"]:active:focus,
+input[type="button"].active:focus,
+input[type="button"].focus,
+input[type="button"]:active.focus,
+input[type="button"].active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.backButton:hover,
+.backButton:focus,
+.backButton.focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="button"].focus {
+  color: #333;
+  text-decoration: none;
+}
+.backButton:active,
+.backButton.active,
+input[type="button"]:active,
+input[type="button"].active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+/*.btn-default*/
+.backButton,
+input[type="button"] {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.backButton:focus,
+.backButton.focus,
+input[type="button"]:focus,
+input[type="button"].focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.backButton:hover,
+input[type="button"]:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.backButton:active,
+.backButton.active,
+input[type="button"]:active,
+input[type="button"].active {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+
+/*Continue*/
+.nextButton,
+input[type="submit"] {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.nextButton:focus,
+.nextButton:active:focus,
+.nextButton.active:focus,
+.nextButton.focus,
+.nextButton:active.focus,
+.nextButton.active.focus,
+input[type="submit"]:focus,
+input[type="submit"]:active:focus,
+input[type="submit"].active:focus,
+input[type="submit"].focus,
+input[type="submit"]:active.focus,
+input[type="submit"].active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.nextButton:hover,
+.nextButton:focus,
+.nextButton.focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"].focus {
+  color: #333;
+  text-decoration: none;
+}
+.nextButton:active,
+.nextButton.active,
+input[type="submit"]:active,
+input[type="submit"].active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.nextButton.disabled:hover,
+.nextButton[disabled]:hover,
+fieldset[disabled] .nextButton:hover,
+.nextButton.disabled:focus,
+.nextButton[disabled]:focus,
+fieldset[disabled] .nextButton:focus,
+.nextButton.disabled.focus,
+.nextButton[disabled].focus,
+fieldset[disabled] .nextButton.focus,
+input[type="submit"].disabled:hover,
+input[type="submit"][disabled]:hover,
+fieldset[disabled] input[type="submit"]:hover,
+input[type="submit"].disabled:focus,
+input[type="submit"][disabled]:focus,
+fieldset[disabled] input[type="submit"]:focus,
+input[type="submit"].disabled.focus,
+input[type="submit"][disabled].focus,
+fieldset[disabled] input[type="submit"].focus {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+
+/*.btn-primary*/
+.nextButton,
+#purchaseID,
+input[type="submit"] {
+  color: #fff !important;
+  background-color: #337ab7 !important;
+  border-color: #2e6da4 !important;
+}
+.nextButton:focus,
+#purchaseID:focus,
+input[type="submit"]:focus,
+input[type="submit"].focus {
+  color: #fff !important;
+  background-color: #286090 !important;
+  border-color: #122b40 !important;
+}
+.nextButton:hover,
+#purchaseID:hover,
+input[type="submit"]:hover {
+  color: #fff !important;
+  background-color: #286090 !important;
+  border-color: #204d74 !important;
+}
+.nextButton:active,
+#purchaseID:active,
+input[type="submit"]:active,
+input[type="submit"].active,
+.open > .dropdown-toggleinput[type="submit"] {
+  color: #fff !important;
+  background-color: #286090 !important;
+  border-color: #204d74 !important;
+}
+.nextButton:active:hover,
+#purchaseID:active:hover,
+.nextButton:active:focus,
+#purchaseID:active:focus,
+input[type="submit"]:active:hover,
+input[type="submit"].active:hover,
+.open > .dropdown-toggleinput[type="submit"]:hover,
+input[type="submit"]:active:focus,
+input[type="submit"].active:focus,
+.open > .dropdown-toggleinput[type="submit"]:focus,
+input[type="submit"]:active.focus,
+input[type="submit"].active.focus,
+.open > .dropdown-toggleinput[type="submit"].focus {
+  color: #fff !important;
+  background-color: #204d74 !important;
+  border-color: #122b40 !important;
+}
+
+
+/*regular select from .form-control*/
+select {
+  display: block;
+  /*width: 100%;*/
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+select:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+select::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+select:-ms-input-placeholder {
+  color: #999;
+}
+select::-webkit-input-placeholder {
+  color: #999;
+}
+select::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+
+/*END common styles*/
+
+/*Theater header*/
+.theatre{
+  display:inline-block;
+}
+.theatre,
+body > table:nth-child(2) > tbody > tr > td:nth-child(1) > p:nth-child(4){
+  text-align: right;
+}
+
+.theatre font:nth-child(1) b,
+body > table:nth-child(2) > tbody > tr > td:nth-child(1) > p:nth-child(4) > font:nth-child(1),
+#Table2 > tbody > tr > td:nth-child(1) > font:nth-child(1)
+ {
+  font-size: 12px !important;
+}
+
+/*Theater address*/
+.theatre font:nth-child(2),
+body > table:nth-child(2) > tbody > tr > td:nth-child(1) > p:nth-child(4) > font:nth-child(2),
+#Table2 > tbody > tr > td:nth-child(1) > font:nth-child(2)
+{
+  font-size: 12px !important;
+}
+
+/*Directions*/
+body > table > tbody > tr > td:nth-child(1) > p:nth-child(2) > font,
+body > table:nth-child(2) > tbody > tr > td:nth-child(1) > p:nth-child(5) > font,
+#Table2 > tbody > tr > td:nth-child(1) > p:nth-child(2) > font,
+#Table2 > tbody > tr > td:nth-child(1) > p:nth-child(3) > font,
+#Table2 > tbody > tr > td:nth-child(2) > p:nth-child(1)
+{
+  font-size: 12px !important;
+
+}
+
+/*Date select*/
+/*.input-lg*/
+body > table > tbody > tr > td:nth-child(2) > form > select {
+
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+  height: 46px;
+  line-height: 46px;
+}
+
+
+
+/*Showtime link*/
+a.showtime{
+  padding-right: 20px;
+}
+
+
+/*Reserved Location Choice*/
+body > table:nth-child(2) > tbody > tr td{
+  width: 100%;
+}
+
+body > table:nth-child(2) > tbody > tr > td:nth-child(2) > a{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*Number of seats*/
+
+input[type="radio"]{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 3px;
+  /*position: absolute;
+  margin-top: 4px \9;
+  margin-left: -20px;*/
+}
+
+input[name="Purchase"]{
+  margin-right: 130px;
+}
+
+#Table1 td {
+  width: 100%;
+}
+
+/* Reserved seat selection*/
+
+#seatNavigation {
+
+  margin-top: 50px;
+}
+.backButton{
+  margin-right: 50px;
+}
+.nextButton{
+  margin-left: 50px;
+}
+
+/*Ticket Picker*/
+#ticketPicker {
+  display: table;
+}
+#ticketPicker table {
+  display: table-cell;
+}
+
+#ticketPicker table td{
+  display: table-cell;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*Payment*/
+#purchaseinfo {
+  /*display: table;*/
+  table-layout: auto;
+}
+#purchaseinfo td {
+  /*display: table-cell;*/
+  display: inline-block;
+  width: initial;
+  text-align: left;
+  padding: 0;
+}
+#purchaseinfo th {
+  display: none;
+}
+
+/*Show info*/
+#purchaseinfo > tbody > tr:nth-child(-n+3) > td{
+
+}
+/*Movie name*/
+#purchaseinfo > tbody > tr:nth-child(1) > td{
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+/*Showtime*/
+#purchaseinfo > tbody > tr:nth-child(3) > td{
+  margin-bottom: 20px;
+}
+
+/*Ticket Table*/
+#purchaseinfo > tbody > tr:nth-child(n+4) > td{
+  padding: 5px;
+
+}
+
+/*Seat optional*/
+#purchaseinfo > tbody > tr:nth-child(n+4):not(:nth-last-child(-n+2)) > td:nth-child(2):before {
+   content: "Seat: ";
+}
+
+#purchaseinfo > tbody > tr:nth-child(n+4):not(:nth-last-child(-n+2)) > td:nth-last-child(4):before {
+   content: "Quantity: ";
+}
+#purchaseinfo > tbody > tr:nth-child(n+4):not(:nth-last-child(-n+2)) > td:nth-last-child(3):before {
+   content: "Price: ";
+}
+
+#purchaseinfo > tbody > tr:nth-child(n+4):not(:nth-last-child(-n+2)) > td:nth-last-child(2):before {
+   content: "Fee: ";
+}
+#purchaseinfo > tbody > tr:nth-child(n+4):not(:nth-last-child(-n+2)) > td:nth-last-child(1):before {
+   content: "Total: ";
+}
+
+
+/*Fee rows (2 rows)*/
+#purchaseinfo > tr:nth-last-child(-n+2) > td
+{
+
+}
+
+
+#Table3 td{
+  /*display: table-cell;*/
+  display: inline-flex;
+  vertical-align: middle;
+  text-align: left;
+  width: auto;
+
+  padding-bottom: 20px;
+
+}
+
+#Table3 td:first-child{
+  /*padding-right: 20px;*/
+  width: 150px;
+}
+
+/*Credit card images*/
+#Table3 > tbody > tr:nth-child(1) > td:nth-child(3){
+  /*width: 120px;*/
+}
+
+#purchaseID{
+  margin-right: 100px;
+}
+
+#Table3 {
+
+}
+
+/** {
+  border: 1px solid #f00;
+}*/
+
+#Table3 input[type="text"] {
+  /*display: inline-block;*/
+  width: auto;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+#Table3 input[type="text"]:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+#Table3 input[type="text"]::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+#Table3 input[type="text"]:-ms-input-placeholder {
+  color: #999;
+}
+#Table3 input[type="text"]::-webkit-input-placeholder {
+  color: #999;
+}
+#Table3 input[type="text"]::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+#Table3 input[type="text"][disabled],
+#Table3 input[type="text"][readonly]{
+  background-color: #eee;
+  opacity: 1;
+}
+#Table3 input[type="text"][disabled]{
+  cursor: not-allowed;
+}
+
+
+
