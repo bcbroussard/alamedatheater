@@ -1,0 +1,62 @@
+
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif;
+
+font-family: 'Limelight', cursive;
+font-family: 'Poiret One', cursive;
+*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: url(assets/vintage/subtlenet2.png);
+  /*background: url(assets/retro/grain.png) repeat;
+  background-color: #e3e0dd;*/
+  /*background-color: #e6e1d0;*/
+
+}
+
+
+.theatre,
+body > table:nth-child(2) > tbody > tr > td:nth-child(1) > p:nth-child(4){
+  font-family: 'Poiret One', sans-serif !important;
+}
+
+.theatre font:nth-child(1) b,
+body > table:nth-child(2) > tbody > tr > td:nth-child(1) > p:nth-child(4) > font:nth-child(1),
+#Table2 > tbody > tr > td:nth-child(1) > font:nth-child(1)
+ {
+  font-family: 'Poiret One', sans-serif !important;
+  /*font-size: 18px !important;*/
+
+}
+
+/*Theater address*/
+.theatre font:nth-child(2),
+body > table:nth-child(2) > tbody > tr > td:nth-child(1) > p:nth-child(4) > font:nth-child(2),
+#Table2 > tbody > tr > td:nth-child(1) > font:nth-child(2)
+{
+  font-family: 'Poiret One', sans-serif !important;
+  /*font-size: 14px !important;*/
+
+}
+
+/*Directions*/
+body > table > tbody > tr > td:nth-child(1) > p:nth-child(2) > font,
+body > table:nth-child(2) > tbody > tr > td:nth-child(1) > p:nth-child(5) > font,
+#Table2 > tbody > tr > td:nth-child(1) > p:nth-child(2) > font,
+#Table2 > tbody > tr > td:nth-child(1) > p:nth-child(3) > font,
+#Table2 > tbody > tr > td:nth-child(2) > p:nth-child(1)
+{
+  font-family: 'Open Sans', sans-serif !important;
+
+}
+
+body > table > tbody > tr > td:nth-child(1),
+body > table:nth-child(2) > tbody > tr > td:nth-child(1),
+#Table2 > tbody > tr > td:nth-child(1)
+{
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  /*border-bottom: 1px solid #eee;*/
+  /*black 1px solid*/
+  margin-bottom: 20px;
+}
