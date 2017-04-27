@@ -8,10 +8,10 @@ font-family: 'Poiret One', cursive;
 */
 body {
   font-family: 'Open Sans', sans-serif;
-  background: url(assets/vintage/subtlenet2.png);
-  /*background: url(assets/retro/grain.png) repeat;
-  background-color: #e3e0dd;*/
-  /*background-color: #e6e1d0;*/
+  /*background: url(assets/vintage/subtlenet2.png);*/
+  background: url(assets/retro/grain.png) repeat;
+  background-color: #e6e1d0;
+  /*background-color: #e3e0dd;*/
 
 }
 
