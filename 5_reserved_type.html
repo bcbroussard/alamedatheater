@@ -294,7 +294,7 @@
                                         <div id="ticketPickWrapper">
                                             <p class="instructions">For each seat selection assign the ticket type you wish to purchase:</p>
                                             <div id="ticketPicker">
-                                                <form action="https://43500.formovietickets.com:2235/T.asp?WCI=CS" method="POST">
+                                                <form action="6_card.html" method="GET">
                                                     <input name="perfId" type="hidden" value="130066">
                                                     <input name="sectionId" type="hidden" value="23">
                                                     <input name="placeId" type="hidden" value="364">
@@ -336,7 +336,7 @@
                                         </div>
                                         <div id="ticketNavWrapper">
                                             <div id="ticketNavigation">
-                                                <input id="ticketBackButton" class="backButton" type="button" value="Back" onclick="ticketBackButtonClick();">
+                                                <input id="ticketBackButton" class="backButton" type="button" value="Back" onclick="history.go(-1);">
                                                 <input type="button" id="ticketNextButton" class="nextButton" value="Continue" onclick="this.disabled = true; document.forms[0].submit();">
                                             </div>
                                         </div>
